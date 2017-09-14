@@ -1,11 +1,19 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="eth-dark">
     <ion-title>
-      About
+      Querys
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+	<ion-item>
+	  <ion-label floating>Account</ion-label>
+	  <ion-input type="text" [(ngModel)]="balance_input"></ion-input>
+	</ion-item>
+	<div padding>
+		{{ balance }}
+	</div>
+	<button (click)="get_balance()" ion-button small block outline round>Get balance</button>
 
 </ion-content>

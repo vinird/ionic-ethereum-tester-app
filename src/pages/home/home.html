@@ -1,17 +1,26 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="eth-dark">
+    <ion-title>Eth status</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <button (click)="charge_data()" ion-button small block outline round>Load Blockchain</button>
+  <ion-card class="bg">
+    <ion-card-content>
+      <div [innerHTML]="data" ></div>
+    </ion-card-content>
+  </ion-card>
+
+  <br>
+  <button (click)="charge_account()" ion-button small block outline round>Load Accounts</button>
+  <ion-card class="bg">
+    <ion-card-content>
+      <div [innerHTML]="accounts" ></div>
+    </ion-card-content>
+  </ion-card>
+
+  <div padding>
+    <button (click)="openEthWebClient()" ion-button block round>Open Web Eth Client</button>
+  </div>
 </ion-content>

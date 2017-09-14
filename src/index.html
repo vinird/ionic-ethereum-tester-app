@@ -13,15 +13,38 @@
 
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
+  <script src="assets/js/web3.js"></script>
+  <script>
+    var Web3 = require('web3');
+    var web3 = new Web3();
 
-  <!-- un-comment this code to enable service worker
+    var host = "http://159.203.0.218:8545";
+
+    if (typeof web3 !== 'undefined') {
+    web3 = new Web3(new Web3.providers.HttpProvider(host));
+    console.log('new');
+    } else {
+      console.log('setting provider');
+      // set the provider you want from Web3.providers
+      web3 = new Web3(new Web3.providers.HttpProvider(host));
+    }
+
+    if(!web3.isConnected()) {
+       // show some dialog to ask the user to start a node
+       console.log('no esta conectado')
+    } else {
+       console.log('conectado!!')
+    }
+  </script>
+
+   <!-- un-comment this code to enable service worker
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')
         .then(() => console.log('service worker installed'))
         .catch(err => console.error('Error', err));
     }
-  </script>-->
+  </script> -->
 
   <link href="build/main.css" rel="stylesheet">
 
@@ -40,6 +63,10 @@
 
   <!-- The main bundle js is generated during the build process -->
   <script src="build/main.js"></script>
+
+  <!-- Libraries -->
+
+
 
 </body>
 </html>
