@@ -21,13 +21,14 @@ export class HomePage {
 
     constructor(public navCtrl: NavController, private iab: InAppBrowser, public loadingCtrl: LoadingController) 
     {
-       this.data = "No data..";
-       this.accounts = "No data..";
+       this.data = "";
+       this.accounts = "";
     }
 
     ionViewDidLoad()
     {
   	}
+
 
   	openEthWebClient()
   	{

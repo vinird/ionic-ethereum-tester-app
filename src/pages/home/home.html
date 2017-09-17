@@ -4,23 +4,26 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <button (click)="charge_data()" ion-button small block outline round>Load Blockchain</button>
-  <ion-card class="bg">
-    <ion-card-content>
-      <div [innerHTML]="data" ></div>
-    </ion-card-content>
-  </ion-card>
-
+<ion-content class="selectable">
+  <div padding>
+    <div padding>
+      <button (click)="charge_data()" ion-button small block round>Load Blockchain</button>
+    </div>
+    <div [innerHTML]="data" ></div>
+  </div>
+  <span class="divider"></span>
   <br>
-  <button (click)="charge_account()" ion-button small block outline round>Load Accounts</button>
-  <ion-card class="bg">
-    <ion-card-content>
-      <div [innerHTML]="accounts" ></div>
-    </ion-card-content>
-  </ion-card>
 
   <div padding>
-    <button (click)="openEthWebClient()" ion-button block round>Open Web Eth Client</button>
+    <div padding>
+      <button (click)="charge_account()" ion-button small block  round>Load Accounts</button>
+    </div>
+    <div [innerHTML]="accounts" ></div> 
+  </div>
+
+  <span class="divider"></span>
+
+  <div padding>
+    <button (click)="openEthWebClient()" ion-button block outline round>Open Web Eth Client</button>
   </div>
 </ion-content>

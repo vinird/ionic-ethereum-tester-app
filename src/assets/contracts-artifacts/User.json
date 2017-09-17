@@ -1,0 +1,60 @@
+{
+  "contract_name": "User",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "getBlockNumber",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "getUserGas",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "getUser",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b5b5b61010c806100216000396000f300606060405263ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166342cbb15c811460505780634fcb1505146072578063832880e7146094575b600080fd5b3415605a57600080fd5b606060cd565b60405190815260200160405180910390f35b3415607c57600080fd5b606060d2565b60405190815260200160405180910390f35b3415609e57600080fd5b60a460db565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b435b90565b60005a90505b90565b335b905600a165627a7a723058205338fa2460d5d4a7f404e090acd66a7878318dc46e2d02fb68bb1c6b235568410029",
+  "networks": {
+    "1505583672606": {
+      "events": {},
+      "links": {},
+      "address": "0xcad1f5a823e1623e2375d28ee7fcf0f313bbd797",
+      "updated_at": 1505583809269
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1505583809269
+}

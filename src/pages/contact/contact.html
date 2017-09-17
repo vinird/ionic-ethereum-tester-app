@@ -1,17 +1,31 @@
 <ion-header>
   <ion-navbar color="eth-dark">
     <ion-title>
-      Contact
+      Contract
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-left></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+<ion-content class="selectable">
+  <div padding>
+    There is a example contract in the test Ethereum blockchain that has three functions, the first one returns the available gas for the user who is requesting. The second return the user account. And the last one return the block of the contract.
+  </div>
+  <div padding>
+    <button (click)="getUserGas()" ion-button block small outline round>Get user gas</button>
+  </div>
+  <div padding text-center>
+    {{userGas}}
+  </div>
+  <div padding>
+    <button (click)="getUser()" ion-button block small outline round>Get user</button>
+  </div>
+  <div padding text-center>
+    {{user}}
+  </div>
+  <div padding>
+    <button (click)="getBlockNumber()" ion-button block small outline round>Get block number</button>
+  </div>
+  <div padding text-center>
+    {{blockNumber}}
+  </div>
 </ion-content>

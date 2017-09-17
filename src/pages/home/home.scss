@@ -2,4 +2,16 @@ page-home {
 	.bg{
 		background-color: #ecf0f5;
 	}
+	.divider {
+		width: 100%;
+		display: block;
+		height: 1px;
+		background-color: #ccc;
+	}
+	.selectable {
+	  -webkit-user-select: text;
+	  -moz-user-select: text;
+	  -ms-user-select: text;
+	  user-select: text;
+	}
 }
