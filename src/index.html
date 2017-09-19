@@ -14,93 +14,12 @@
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
 
-  <script src="assets/js/web3.js"></script>
-  <script src="assets/js/truffle-contract.js"></script>
-  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/libs/web3.js"></script>
+  <script src="assets/js/libs/truffle-contract.js"></script>
+  <script src="assets/js/libs/jquery.min.js"></script>
+  <script src="assets/js/truffle-contract-artifacts.js"></script>
 
-  <script>
-    var Web3 = require('web3');
-    var web3 = new Web3();
-
-    var host = "http://159.203.0.218:8545";
-
-    App = {
-      web3Provider: null,
-      contracts: {},
-
-      init: function() {
-          return App.initWeb3();
-        },
-
-        // Init Web3 provider ////////////////////////////////////////////
-        initWeb3: function() {
-          // Inicializa web3 y apunta el proveedor hacia testRPC.
-          // escoja el proveedor específico de Web3.providers
-          App.web3Provider = new Web3.providers.HttpProvider('http://159.203.0.218:8545');
-          web3 = new Web3(App.web3Provider);
-          console.log("Web3 new instance " + web3)
-          console.log(web3)
-          
-          try {
-            console.log("Blockchain is listening: " + web3.net.listening);
-          } catch (err) {
-            console.log("Error " + err)
-          }
-          return App.initContract();
-      },
-
-      // Init contract ////////////////////////////////////////////////
-      initContract: function() {
-          $.getJSON('./assets/contracts-artifacts/User.json', function(data) {
-              // Get the necessary contract artifact file and instantiate it with truffle-contract.
-              var UserArtifact = data;
-              App.contracts.User = TruffleContract(UserArtifact);
-
-              // Set the provider for our contract.
-              App.contracts.User.setProvider(App.web3Provider);
-          });
-        },
-
-        // Call contrac events ///////////////////////////////////////
-        getUserGas: function() {
-          var userInstance;
-
-          App.contracts.User.deployed().then(function(instance) {
-
-              userInstance = instance;
-        //      userInstance.getUser.call().then(function(val) {
-          //    console.log("User info " + val)
-          // });
-
-          // userInstance.getBlockNumber.call().then(function(val){
-          //  console.log("Block number " + val);
-          // });
-
-            return userInstance.getUserGas.call();
-
-          }).then(function(response) {
-                return response;
-          }).catch(function(err) {
-                console.log(err.message);
-          });
-        },
-
-        // Get contracts //////////////////////////////////////////
-        getUserContract: function() {
-          return App.contracts.User;
-        }
-    }
-
-
-    window.onload = function() {
-      App.init();
-    };
-
-
-
-  </script>
-
-   <!-- un-comment this code to enable service worker
+  <!-- un-comment this code to enable service worker
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')

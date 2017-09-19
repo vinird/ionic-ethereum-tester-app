@@ -13,6 +13,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 // Added providers
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { UserContractProvider } from '../providers/user-contract/user-contract';
+import { KevinContractProvider } from '../providers/kevin-contract/kevin-contract';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,10 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    InAppBrowser
+    InAppBrowser,
+    UserContractProvider,
+    UserContractProvider,
+    KevinContractProvider,
   ]
 })
 export class AppModule {}

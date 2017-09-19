@@ -6,9 +6,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="selectable">
+<ion-content class="selectable main">
   <div padding>
     There is a example contract in the test Ethereum blockchain that has three functions, the first one returns the available gas for the user who is requesting. The second return the user account. And the last one return the block of the contract.
+  </div>
+  <div padding text-center>
+    <h3>Vini contract</h3>
   </div>
   <div padding>
     <button (click)="getUserGas()" ion-button block small outline round>Get user gas</button>
@@ -27,5 +30,31 @@
   </div>
   <div padding text-center>
     {{blockNumber}}
+  </div>
+
+  <div style="width: 100%; height: 1px; background: black;"></div>
+
+  <div padding text-center>
+    <h3>Kevin contract</h3>
+  </div>
+  <div padding>
+    <button (click)="getWord()" ion-button block small outline round>Get word</button>
+  </div>
+  <div padding text-center>
+    {{word}}
+  </div>
+  <div padding>
+    <ion-item>
+      <ion-label floating>Write a string..</ion-label>
+      <ion-input type="text" [(ngModel)]="inputWord"></ion-input>
+    </ion-item>
+    <button (click)="setWord()" ion-button block small outline round>Set word</button>
+  </div>
+
+  <div padding>
+    <button (click)="getAddress()" ion-button block small outline round>Get addres</button>
+  </div>
+  <div padding text-center>
+    {{address}}
   </div>
 </ion-content>
