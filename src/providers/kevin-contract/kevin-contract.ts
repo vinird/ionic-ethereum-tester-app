@@ -48,7 +48,7 @@ export class KevinContractProvider {
   getAddress() {
   	return this.kevinContract.deployed().then((instance) => {
   		let kevinInstance = instance;
-  		return kevinInstance.getAddress();
+  		return kevinInstance.getAddress.call();
   	}).then((response) => {
   		return response;
   	}).catch((err) => {
