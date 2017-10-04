@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { LoadingController } from 'ionic-angular';
 
+
 // import { BigNumber } from 'bignumber.js';
 declare var web3; 
 // declare var Web3; 
@@ -27,12 +28,6 @@ export class HomePage {
 
     ionViewDidLoad()
     {
-  	}
-
-
-  	openEthWebClient()
-  	{
-  		this.iab.create('http://159.203.0.218/eth/ethereum_client/');
   	}
 
 

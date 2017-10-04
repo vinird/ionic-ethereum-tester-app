@@ -62,5 +62,5 @@ App = {
 }
 
 window.onload = function() {
-	App.init();
+	// App.init();
 };

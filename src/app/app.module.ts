@@ -7,6 +7,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { StartPage } from '../pages/start/start';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -16,17 +17,21 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { UserContractProvider } from '../providers/user-contract/user-contract';
 import { KevinContractProvider } from '../providers/kevin-contract/kevin-contract';
 
+import { IonicStorageModule } from '@ionic/storage';
+
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    StartPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,7 +39,8 @@ import { KevinContractProvider } from '../providers/kevin-contract/kevin-contrac
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    StartPage
   ],
   providers: [
     StatusBar,
