@@ -16,8 +16,8 @@
 <ion-content padding>
   <h2>
     <ion-item>
-      <ion-input placeholder="Text Input"></ion-input>
+      <ion-input placeholder="Text Input" #titleInput></ion-input>
     </ion-item>
   </h2>
-  <button ion-button round block outline>Round Button</button>
+  <button ion-button round block outline (click)="saveInputValue(titleInput.value)">Round Button</button>
 </ion-content>

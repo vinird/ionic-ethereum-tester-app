@@ -31,5 +31,9 @@ export class StartPage {
     });
     alert.present();
   }
+  
+  saveInputValue(event){
+  	alert("EnterText:" +event);
+  }
 
 }
