@@ -32,8 +32,8 @@ export class StartPage {
     alert.present();
   }
   
-  saveInputValue(event){
-  	alert("EnterText:" +event);
+  saveInputValue(value){
+    localStorage.setItem('inputValue',value);
   }
 
 }
