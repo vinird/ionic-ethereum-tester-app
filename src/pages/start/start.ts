@@ -31,5 +31,9 @@ export class StartPage {
     });
     alert.present();
   }
+  
+  saveInputValue(value){
+    localStorage.setItem('inputValue',value);
+  }
 
 }
