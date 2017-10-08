@@ -16,8 +16,8 @@
 <ion-content padding>
   <h2>
     <ion-item>
-      <ion-input type="text" placeholder="Host Url" [(ngModel)]="hostUrl"></ion-input>
+      <ion-input type="text" placeholder="Host Url" #hostUrl></ion-input>
     </ion-item>
   </h2>
-  <button ion-button round block outline (click)="saveHostUrl(hostUrl);">Save</button>
+  <button ion-button round block outline (click)="saveHostUrl(hostUrl.value);">Save</button>
 </ion-content>
