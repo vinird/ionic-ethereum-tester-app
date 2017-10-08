@@ -33,6 +33,10 @@ export class StartPage {
     });
     alert.present();
   }
+  
+  saveInputValue(value){
+    localStorage.setItem('inputValue',value);
+  }
 
   saveHostUrl(hostUrl: string) {
     localStorage.setItem('host-url', hostUrl);
