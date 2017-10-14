@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { AlertController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the StartPage page.
@@ -14,8 +14,10 @@ import { AlertController } from 'ionic-angular';
   templateUrl: 'start.html',
 })
 export class StartPage {
+  public hostUrl: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,
+    public toastCtrl: ToastController, private storage: Storage) {
   }
 
   ionViewDidLoad() {
@@ -34,6 +36,25 @@ export class StartPage {
   
   saveInputValue(value){
     localStorage.setItem('inputValue',value);
+  }
+
+  saveHostUrl(hostUrl: string) {
+    localStorage.setItem('host-url', hostUrl);
+    this.storage.set('host-url', hostUrl).then((val) => {
+      const toast = this.toastCtrl.create({
+        message: `Host Url: ${hostUrl} saved successfully`,
+        duration: 4000,
+        position: 'bottom'
+      });
+      toast.present();
+    }).catch((error) => {
+      const toast = this.toastCtrl.create({
+        message: `Host Url could be saved successfully`,
+        duration: 4000,
+        position: 'bottom'
+      });
+      toast.present();
+    });
   }
 
 }
